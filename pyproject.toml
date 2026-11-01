@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pogget-float"
+version = "0.1.0"
+description = "Pogget desktop shortcut floating shelf"
+requires-python = ">=3.10"
+dependencies = [
+  "PySide6>=6.9.3",
+  "darkdetect~=0.8.0",
+  "pywin32>=306; sys_platform == 'win32'",
+]
+
+[project.scripts]
+flowwidget = "pogget_float.app:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pogget_float"]
+namespaces = false
+
+[tool.setuptools.package-data]
+pogget_float = [
+  "qml/**/*.qml",
+  "Rin-UI-master/RinUI/**/*.py",
+  "Rin-UI-master/RinUI/**/*.qml",
+  "Rin-UI-master/RinUI/**/qmldir",
+  "Rin-UI-master/RinUI/**/*.qm",
+  "Rin-UI-master/RinUI/**/*.png",
+  "Rin-UI-master/RinUI/**/*.svg",
+  "Rin-UI-master/RinUI/**/*.ttf",
+  "Rin-UI-master/RinUI/**/*.js",
+  "Rin-UI-master/RinUI/**/*.json",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
