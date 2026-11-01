@@ -26,6 +26,7 @@ namespaces = false
 
 [tool.setuptools.package-data]
 pogget_float = [
+  "Rin-UI-master/LICENSE",
   "qml/**/*.qml",
   "Rin-UI-master/RinUI/**/*.py",
   "Rin-UI-master/RinUI/**/*.qml",
